@@ -20,7 +20,7 @@ y_data=data_train[:,6:]
 
 learning_rate=0.00000016
 
-t0=0.0
+t0=1
 t1=0.0
 t2=0.0
 t3=0.0

@@ -20,7 +20,7 @@ y_data=data_train[:,6:]
 
 learning_rate=0.0000016
 
-t0=0.0
+t0=1
 t1=0.0
 t2=0.0
 t3=0.0
@@ -79,7 +79,10 @@ x_actual_4=data_test[:,3:4]
 x_actual_5=data_test[:,4:5]
 x_actual_6=data_test[:,5:6]
 
-y_pred=t0+t1*x1_data+t2*x2_data+t3*x3_data+t4*x4_data+t5*x5_data+t6*x6_data
+y_pred=t0+t1*x_actual_1+t2*x_actual_2+t3*x_actual_3+t4*x_actual_4+t5*x_actual_5+t6*x_actual_6
 
-for y_act,y_p in zip(y_data,y_pred):
-    print(f'Actual Value: {y_act}, Predicted value: {y_p}, Difference: {y_act-y_p}')
+sum=0
+for y_act,y_p in zip(y_actual,y_pred):
+    sum+=(y_p-y_act)**2
+print((1/data_test.shape[0])*sum)
+    #print(f'Actual Value: {y_act}, Predicted value: {y_p}, Difference: {y_act-y_p}')
